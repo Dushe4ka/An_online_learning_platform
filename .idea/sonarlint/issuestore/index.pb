@@ -94,3 +94,15 @@ L
 users/migrations/__init__.py,2\3\230870cff2cd30fc8669ed5dfc155cee3aa7b30f
 B
 materials/admin.py,5\2\522f22bd0d5e12b0d855e9ab411d67f10b67603b
+D
+users/serializers.py,0\3\0370a3d1189c390d96351731f97e1b568264a270
+=
+users/urls.py,7\e\7ebb6dc32a2768a7e73ce1c83409f9c85bd4ad6a
+C
+materials_data.json,2\1\217b3d75f45a9ba2b9202cdecfe869daaa243939
+9
+	readme.md,2\7\275d783e298228506068436512433d343feb52aa
+…
+Uusers/migrations/0003_remove_payment_course_or_lesson_payment_paid_course_and_more.py,0\f\0f628ab4d418d70e32f83bd488df7e749896ccaa
+P
+ users/migrations/0002_payment.py,9\9\99cfd2e2e00b887a8e77aacaeb6f5308f0492e26

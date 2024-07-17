@@ -106,3 +106,15 @@ C
 Uusers/migrations/0003_remove_payment_course_or_lesson_payment_paid_course_and_more.py,0\f\0f628ab4d418d70e32f83bd488df7e749896ccaa
 P
  users/migrations/0002_payment.py,9\9\99cfd2e2e00b887a8e77aacaeb6f5308f0492e26
+G
+users_payment_data.json,3\9\39d5385cff7c85bc946b2b2cc73f64f229814203
+D
+users/permissions.py,c\0\c0132b4deeb3ef4d608db179d07cbf15fa7d8465
+U
+%users/management/commands/__init__.py,0\c\0c6aae16120ff4fc4609948a63f7649b97e34835
+L
+users/management/__init__.py,b\8\b89b07037f6d3cc185058197aa922a3f0db7ddb3
+P
+ users/management/commands/csu.py,3\c\3c5b10f43c09929fb3a8f01c86abb53b6873e9ce
+f
+6materials/migrations/0002_course_owner_lesson_owner.py,1\a\1a41dd2be6152a51eef16c3a2dd13ed40bb2aba5

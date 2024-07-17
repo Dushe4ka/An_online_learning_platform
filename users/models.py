@@ -1,7 +1,7 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
-from materials.models import Course, Lesson
+
 
 NULLABLE = {"blank": True, "null": True}
 
@@ -42,6 +42,7 @@ class User(AbstractUser):
 # сумма оплаты,
 # способ оплаты: наличные или перевод на счет.
 class Payment(models.Model):
+    from materials.models import Course, Lesson
     PAYMENT_METHOD_CHOICES = [
         ('cash', 'наличные'),
         ('card', 'банковский перевод')

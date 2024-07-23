@@ -118,3 +118,5 @@ P
  users/management/commands/csu.py,3\c\3c5b10f43c09929fb3a8f01c86abb53b6873e9ce
 f
 6materials/migrations/0002_course_owner_lesson_owner.py,1\a\1a41dd2be6152a51eef16c3a2dd13ed40bb2aba5
+G
+materials/validators.py,b\8\b8d0dbad8d974904dc1837eae2e241aac9607013

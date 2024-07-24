@@ -10,5 +10,5 @@ class YouTubeValidation:
     def __call__(self, value):
         # OrderedDict переводим в dict, и получаем зн. поля, которое нужно валидировать.
         val = dict(value).get(self.field)
-        if "youtube.com" not in val:
+        if val and "youtube.com" not in val:
             raise ValidationError("Ссылка на видео должна быть только на YoutTube")

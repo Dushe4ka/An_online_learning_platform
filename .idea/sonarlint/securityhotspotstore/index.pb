@@ -120,3 +120,7 @@ f
 6materials/migrations/0002_course_owner_lesson_owner.py,1\a\1a41dd2be6152a51eef16c3a2dd13ed40bb2aba5
 G
 materials/validators.py,b\8\b8d0dbad8d974904dc1837eae2e241aac9607013
+G
+materials/paginators.py,d\2\d20a048985a414c24f46197d920d7d9ba6a23f2e
+C
+coverage-report.txt,6\8\681d6162635af44e905c96e9242a4e0a0a59dec8

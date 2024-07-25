@@ -124,3 +124,5 @@ G
 materials/paginators.py,d\2\d20a048985a414c24f46197d920d7d9ba6a23f2e
 C
 coverage-report.txt,6\8\681d6162635af44e905c96e9242a4e0a0a59dec8
+Y
+)materials/migrations/0003_subscription.py,1\7\17293931bacfdbca431b2464bdaeb56f750c5797

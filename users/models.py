@@ -1,8 +1,6 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
-
-
 NULLABLE = {"blank": True, "null": True}
 
 
@@ -43,47 +41,24 @@ class User(AbstractUser):
 # способ оплаты: наличные или перевод на счет.
 class Payment(models.Model):
     from materials.models import Course, Lesson
-    PAYMENT_METHOD_CHOICES = [
-        ('cash', 'наличные'),
-        ('card', 'банковский перевод')
-    ]
 
-    user = models.ForeignKey(
-        User,
-        on_delete=models.SET_NULL,
-        verbose_name="Платеж",
-        related_name="Payment",
-        **NULLABLE
-    )
-    date_payment = models.DateTimeField(
-        auto_now_add=True,
-        verbose_name="Дата оплаты",
-    )
-    paid_course = models.ForeignKey(
-        Course,
-        on_delete=models.SET_NULL,
-        verbose_name="Оплаченный курс",
-        related_name="paid_course",
-        **NULLABLE
-    )
-    paid_lesson = models.ForeignKey(
-        Lesson,
-        on_delete=models.SET_NULL,
-        verbose_name="Оплаченный урок",
-        related_name="paid_lesson",
-        **NULLABLE
-    )
-    payment_amount = models.PositiveIntegerField(
-        verbose_name="Сумма оплаты",
-        help_text="Укажите сумму оплаты"
-    )
-    payment_method = models.CharField(
-        max_length=35,
-        choices=PAYMENT_METHOD_CHOICES,
-        default='card',
-        verbose_name="Способ оплаты",
-    )
+    class Type_payment(models.TextChoices):
+        cash = 'Наличные'
+        transfer = 'Переводом'
+
+    owner = models.ForeignKey(User, on_delete=models.SET_NULL, verbose_name='пользователь', related_name='payment',
+                              **NULLABLE)
+    datetime_payment = models.DateTimeField(verbose_name='дата оплаты', auto_now_add=True, **NULLABLE)
+    price = models.PositiveIntegerField(verbose_name='сумма оплаты', **NULLABLE)
+    paid_course = models.ForeignKey(Course, on_delete=models.SET_NULL, **NULLABLE, related_name='payment')
+    paid_lesson = models.ForeignKey(Lesson, on_delete=models.SET_NULL, **NULLABLE, related_name='payment')
+    payment_type = models.CharField(choices=Type_payment.choices, max_length=16, verbose_name='способ оплаты', default='Наличные')
+    session_id = models.CharField(max_length=300, verbose_name=' id сессии', **NULLABLE)
+    link = models.URLField(max_length=400, verbose_name='Ссылка на оплату', **NULLABLE)
 
     class Meta:
-        verbose_name = "Платеж"
-        verbose_name_plural = "Платежи"
+        verbose_name = 'Оплата'
+        verbose_name_plural = 'Оплаты'
+
+    def __str__(self):
+        return f'Оплата {self.owner.email} на {self.price} руб.'

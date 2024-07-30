@@ -126,3 +126,13 @@ C
 coverage-report.txt,6\8\681d6162635af44e905c96e9242a4e0a0a59dec8
 Y
 )materials/migrations/0003_subscription.py,1\7\17293931bacfdbca431b2464bdaeb56f750c5797
+T
+$materials/migrations/0004_payment.py,8\4\84e934465a846b56b2317b9bfde3aaa72ae78423
+E
+materials/services.py,c\c\cce46d7953432d502d192f89e44b44fcc5ef294a
+A
+users/services.py,6\d\6df38ad5575bfcbc88401285777d104ec444ba80
+[
++materials/migrations/0005_delete_payment.py,8\e\8e7e9165c2cc15dc5dab08b68e83325392cb6d44
+ƒ
+Susers/migrations/0004_alter_payment_options_remove_payment_date_payment_and_more.py,b\2\b249b8b04d14d532e907fa4a014d3905b8cdc2f2

@@ -10,10 +10,6 @@ from materials.models import Course, Subscription
 from users.models import User
 
 
-def check_last_update_time():
-    pass
-
-
 @shared_task()
 def send_course_update_info(course_id):
     # time.sleep(61)

@@ -40,6 +40,11 @@ class Course(models.Model):
         **NULLABLE,
         help_text="Выберите владельца курса"
     )
+    updated_at = models.DateTimeField(
+        verbose_name='дата последнего изменения',
+        auto_now=True,
+        **NULLABLE
+    )
 
     class Meta:
         verbose_name = "Курс"

@@ -9,6 +9,7 @@ from rest_framework.viewsets import ModelViewSet
 from materials.models import Course, Lesson, Subscription
 from materials.paginators import CustomPagination
 from materials.serializers import CourseSerializer, LessonSerializer, SubscriptionSerializer
+from materials.tasks import send_course_update_info
 from users.permissions import IsModer, IsOwner
 
 
@@ -21,6 +22,10 @@ class CourseViewSet(ModelViewSet):
         course = serializer.save()
         course.owner = self.request.user
         course.save()
+
+    def perform_update(self, serializer):
+        course = serializer.save()
+        send_course_update_info.delay(course.id)
 
     def get_permissions(self):
         if self.action == 'create':
@@ -40,6 +45,7 @@ class LessonCreateAPIView(CreateAPIView):
     def perform_create(self, serializer):
         lesson = serializer.save()
         lesson.owner = self.request.user
+        send_course_update_info.delay(lesson.course.id)
         lesson.save()
 
 
@@ -59,6 +65,10 @@ class LessonUpdateAPIView(UpdateAPIView):
     queryset = Lesson.objects.all()
     serializer_class = LessonSerializer
     permission_classes = [IsAuthenticated, IsModer | IsOwner]
+
+    def perform_update(self, serializer):
+        lesson = serializer.save()
+        send_course_update_info.delay(lesson.course.id)
 
 
 class LessonDestroyAPIView(DestroyAPIView):

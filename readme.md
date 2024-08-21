@@ -7,3 +7,9 @@ celery -A config beat -l info --scheduler django_celery_beat.schedulers:Database
 celery -A my_project worker —loglevel=info
 celery -A my_project beat —loglevel=info
 __  Запуск Celery worker и планировщика Celery beat.
+
+docker-compose up -d --build - для запуска Docker-compose
+
+docker-compose stop - для остановки docker-compose
+
+docker-compose remove - для удаления контейнеров

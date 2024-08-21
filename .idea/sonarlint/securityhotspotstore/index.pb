@@ -142,3 +142,8 @@ B
 .materials/migrations/0006_course_updated_at.py,b\1\b1e7b3b11917da32584a1ec11b3d35cd083a9f37
 ^
 .users/migrations/0005_alter_user_last_login.py,a\b\ab9b3a044d5e8ddd7161042b5e03df6e8f1cab2c
+C
+docker-compose.yaml,e\f\ef8def03dc8f162799089e9b5f4321201c8810d5
+:
+
+Dockerfile,6\6\6651ddff6eb82c840ced7c1dddee15c6e1913dd4
